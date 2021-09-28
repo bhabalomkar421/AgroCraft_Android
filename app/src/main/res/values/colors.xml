@@ -11,4 +11,8 @@
     <color name="colorPrimaryDark">#03B39B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="blue">#00B0FF</color>
+    <color name="textTabLight">#9CB436</color>
+    <color name="textTabBright">#ffffff</color>
+    <color name="White">#ffffff</color>
+    <color name="colorText">#689F38</color>
 </resources>

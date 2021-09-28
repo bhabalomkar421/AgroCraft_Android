@@ -22,7 +22,7 @@
         android:layout_width="257dp"
         android:layout_height="77dp"
         android:gravity="center"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@android:color/background_dark"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/etAdm"
@@ -67,7 +67,7 @@
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="@color/blue"
-        android:text="Lets Go "
+        android:text="@string/lets_go"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
         android:onClick="gotoregister"
-        android:text="New user"
+        android:text="@string/new_user"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin" />
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
-        android:text="Forgot Password"
+        android:text="@string/forgot_password"
         android:textSize="17sp"
 
 
