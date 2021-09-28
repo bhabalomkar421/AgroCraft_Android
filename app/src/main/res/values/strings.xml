@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Agrocraft</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="names">Name</string>
+    <string name="phone_number">Phone number </string>
+
+    <string name="address">Address</string>
+    <string name="confirm_password">Comfirm Password</string>
+    <string name="are_you_a_farmer_or_buyer">Are you a Farmer or Buyer ?</string>
+    <string name="farmer">FARMER</string>
+    <string name="buyer">BUYER</string>
+
+
+</resources>

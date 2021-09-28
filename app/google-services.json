@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "521760650273",
+    "project_id": "agrocraft-d1f9e",
+    "storage_bucket": "agrocraft-d1f9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521760650273:android:a567ec351023e41facdf60",
+        "android_client_info": {
+          "package_name": "com.example.agrocraft_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521760650273-okfju01p1dr8evnv0vfu2kne9csolu3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3F5QaL6XiocTMJcg6RrXhPrwGzyPQssE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521760650273-okfju01p1dr8evnv0vfu2kne9csolu3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
