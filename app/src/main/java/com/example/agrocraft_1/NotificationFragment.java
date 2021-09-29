@@ -55,7 +55,7 @@ userId=mAuth.getCurrentUser().getUid();
 
                     String name=dataSnapshot.child("name").getValue().toString();
 
-                    tvNotif.setText("Hello,  "+name+". Thank you for being part of Enactus UOE, we look forward to make this place a better platform to sell your products as you maximize your profits . We guarantee you a free platform to sell all your products and new customers as well. Stay tuned to have more of our services in future.");
+                    tvNotif.setText("Hello,  "+name+". Thank you for being part of AgroCraft, we look forward to make this place a better platform to sell your products as you maximize your profits . We guarantee you a free platform to sell all your products and new customers as well. Stay tuned to have more of our services in future.");
 
 
                 }
