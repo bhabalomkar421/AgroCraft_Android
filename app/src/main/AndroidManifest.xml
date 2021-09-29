@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroCraft_1">
         <activity
-
-
-
+            android:name=".CheckoutActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail"
             android:parentActivityName=".MainActivity"
@@ -26,15 +26,13 @@
                 android:value="com.example.agrocraft_1.MainActivity" />
         </activity>
         <activity android:name=".UserDetailsActivity" />
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
         <activity
@@ -45,7 +43,6 @@
             android:exported="true" />
         <activity
             android:name=".FarmerLoginActivity"
-
             android:exported="true" />
         <activity
             android:name=".HomeActivity"

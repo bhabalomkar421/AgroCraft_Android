@@ -32,7 +32,7 @@ import java.util.HashMap;
 public class DetailActivity extends AppCompatActivity {
 
     private String name,qty,price,image,poster,time,postId,category;
-    private TextView tvDetailTitle,tvDetailViews,tvDetailLikes,tvDetailQty,tvDetailCategory,tvDetailPoster,tvDetailPrice,tvDetailTime,tvPosterPhone,tvPosterCounty,tvPosterSubcounty,tvPosterScaleType;
+    private TextView tvDetailTitle,tvDetailViews,tvDetailLikes,tvDetailQty,tvDetailCategory,tvDetailPoster,tvDetailPrice,tvDetailTime,tvPosterPhone;
     private ImageView ivImage;
     private DatabaseReference myUsersDatabase;
     private FirebaseAuth mAuth;
@@ -55,9 +55,6 @@ public class DetailActivity extends AppCompatActivity {
         tvDetailTime=findViewById(R.id.tvDetailTime);
 
         tvPosterPhone=findViewById(R.id.tvDetailPosterPhone);
-        tvPosterCounty=findViewById(R.id.tvDetailPosterCounty);
-        tvPosterSubcounty=findViewById(R.id.tvDetailPosterSubcounty);
-        tvPosterScaleType=findViewById(R.id.tvDetailPosterScaletype);
 
         tvDetailViews=findViewById(R.id.tvDetailViews);
         tvDetailLikes=findViewById(R.id.tvDetailLikes);
@@ -205,17 +202,11 @@ public class DetailActivity extends AppCompatActivity {
                 if (dataSnapshot.exists())
                 {
 
-                    String name=dataSnapshot.child("name").getValue().toString();
-                    String phon=dataSnapshot.child("phone").getValue().toString();
-                    String coun=dataSnapshot.child("county").getValue().toString();
-                    String subcou=dataSnapshot.child("subcounty").getValue().toString();
-                    String scalet=dataSnapshot.child("type_scale").getValue().toString();
+                    String name=dataSnapshot.child("fullName").getValue().toString();
+                    String phone=dataSnapshot.child("phone").getValue().toString();
 
                     tvDetailPoster.setText("Product Sold  By: "+name);
-                    tvPosterPhone.setText(phon);
-                    tvPosterCounty.setText(coun);
-                    tvPosterSubcounty.setText(subcou);
-                    tvPosterScaleType.setText(scalet);
+                    tvPosterPhone.setText(phone);
 
 
                 }

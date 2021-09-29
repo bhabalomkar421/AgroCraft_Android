@@ -2,22 +2,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="0dp"
     android:layout_height="match_parent"
     tools:context=".UsersFragment">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:background="@drawable/fragment_background"
-android:layout_margin="15dp"
-        android:layout_height="match_parent">
-    <!-- TODO: Update blank fragment layout -->
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/fragment_background">
+        <!-- TODO: Update blank fragment layout -->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cartList"
-            android:layout_marginBottom="65dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="17dp"/>
+            android:layout_marginTop="17dp" />
+
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="252dp"
+            android:layout_marginTop="532dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/todo"
+            android:text="Checkout"
+            android:textSize="8sp"
+            tools:ignore="VectorDrawableCompat" />
+
     </RelativeLayout>
 
 </RelativeLayout>

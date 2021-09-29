@@ -127,40 +127,6 @@ android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <TextView
-            android:gravity="center_horizontal"
-            android:text="POSTER COUNTY"
-            android:id="@+id/tvDetailPosterCounty"
-
-            android:textSize="18sp"
-            android:layout_marginTop="12dp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:gravity="center_horizontal"
-            android:text="POSTER SUBCOUNTY"
-            android:id="@+id/tvDetailPosterSubcounty"
-
-            android:textSize="18sp"
-            android:layout_marginTop="12dp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:gravity="center_horizontal"
-            android:text="POSTER Scale Type"
-            android:id="@+id/tvDetailPosterScaletype"
-
-            android:textSize="18sp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout
             android:background="@android:drawable/editbox_background"
