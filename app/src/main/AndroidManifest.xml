@@ -14,6 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroCraft_1">
         <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.agrocraft_1.MainActivity" />
+        </activity>
+        <activity android:name=".UserDetailsActivity" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".FarmerHomeActivity"
             android:exported="true" />
         <activity
@@ -31,15 +49,9 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <meta-data
+        android:name="preloaded_fonts"
+        android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
