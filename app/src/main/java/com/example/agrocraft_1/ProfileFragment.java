@@ -85,7 +85,8 @@ private ProgressDialog pd;
 
         mStorageReference= FirebaseStorage.getInstance().getReference().child("Product Images");
 
-        btnUpdate=v.findViewById(R.id.fb);
+//        btnUpdate=v.findViewById(R.id.fb);
+
         d=new Dialog(getContext());
         d.setContentView(R.layout.post_dialog);
          profileImage=d.findViewById(R.id.productImage);
@@ -100,12 +101,12 @@ userId=mAuth.getCurrentUser().getUid();
 pd=new ProgressDialog(getContext());
 pd.setTitle("Uploading Product");
 pd.setMessage("Please wait...");
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bringPostDialog();
-            }
-        });
+//        btnUpdate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                bringPostDialog();
+//            }
+//        });
         return v;
     }
 

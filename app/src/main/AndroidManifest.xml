@@ -23,7 +23,6 @@
                 android:value="com.example.agrocraft_1.MainActivity" />
         </activity>
         <activity android:name=".UserDetailsActivity" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,9 +48,10 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
+
         <meta-data
-        android:name="preloaded_fonts"
-        android:resource="@array/preloaded_fonts" />
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
