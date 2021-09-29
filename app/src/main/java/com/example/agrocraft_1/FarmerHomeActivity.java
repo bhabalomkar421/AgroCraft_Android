@@ -2,8 +2,10 @@ package com.example.agrocraft_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,7 @@ public class FarmerHomeActivity extends AppCompatActivity {
 
     private TextView helloUser;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+private Button addProduct;
 
 
     @Override
@@ -30,7 +32,7 @@ public class FarmerHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farmer_home);
         helloUser=findViewById(R.id.textView2);
-
+        addProduct=findViewById(R.id.add_product);
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         String farmerid=currentFirebaseUser.getUid();
 
@@ -49,15 +51,26 @@ public class FarmerHomeActivity extends AppCompatActivity {
 
 
             }
+
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 Log.w("R", "Failed to read value.", error.toException());
             }
+
+
+
         });
 
 
-//        Toast.makeText(this,""+list,Toast.LENGTH_SHORT).show();
-//Toast.makeText(this,""+value,Toast.LENGTH_SHORT).show();
-    }
+        addProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(FarmerHomeActivity.this,FarmerAddProduct.class);
+
+                startActivity(intent);
+
+            }
+    });
+}
 }
