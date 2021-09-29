@@ -11,6 +11,18 @@
     <string name="are_you_a_farmer_or_buyer">Are you a Farmer or Buyer ?</string>
     <string name="farmer">FARMER</string>
     <string name="buyer">BUYER</string>
-
+    <string name="farmer_home_page">Farmer Home Page</string>
+    <string name="farmer_login">Farmer Login</string>
+    <string name="homepage">Homepage</string>
+    <string name="register">Register</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
+    <string name="lets_go">Lets Go</string>
+    <string name="new_user">New user</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="add_product">Add Products</string>
+    <string name="my_product">My Products</string>
+    <string name="my_transaction">My Transactions</string>
+    <string name="my_profile">Profile</string>
 
 </resources>
