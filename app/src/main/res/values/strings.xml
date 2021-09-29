@@ -5,7 +5,6 @@
     <string name="email">Email</string>
     <string name="names">Name</string>
     <string name="phone_number">Phone number </string>
-
     <string name="address">Address</string>
     <string name="confirm_password">Comfirm Password</string>
     <string name="are_you_a_farmer_or_buyer">Are you a Farmer or Buyer ?</string>
@@ -20,9 +19,11 @@
     <string name="lets_go">Lets Go</string>
     <string name="new_user">New user</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="add_product">Add Products</string>
+    <string name="my_product">My Products</string>
+    <string name="my_transaction">My Transactions</string>
+    <string name="my_profile">Profile</string>
     <string name="todo">TODO</string>
-
     <string name="title_activity_detail">DetailActivity</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

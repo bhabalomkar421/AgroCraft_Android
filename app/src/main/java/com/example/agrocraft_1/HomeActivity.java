@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         mAuth=FirebaseAuth.getInstance();
         myUsersDatabase= FirebaseDatabase.getInstance().getReference().child("Buyer").child("Users");
         myUsersDatabase.keepSynced(true);
@@ -204,5 +205,6 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(HomeActivity.this,LoginActivity.class));
 
         finish();
+
     }
 }
