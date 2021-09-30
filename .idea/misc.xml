@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
-=======
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AgroCraft_Android/app/src/main/res/layout/activity_my_profile.xml" value="0.22" />
         <entry key="..\:/Projects/AgroCraft_1/app/src/main/res/layout/activity_home.xml" value="0.13020833333333334" />
         <entry key="..\:/Projects/AgroCraft_1/app/src/main/res/layout/activity_login.xml" value="0.10400000000000001" />
         <entry key="..\:/Projects/AgroCraft_1/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -16,9 +14,12 @@
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_farmer_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_farmer_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_home.xml" value="0.13020833333333334" />
+        <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_main.xml" value="0.14583333333333334" />
+        <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_my_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/activity_user_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/content_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/fragment_my_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/fragment_notification.xml" value="0.13020833333333334" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/fragment_profile.xml" value="0.13020833333333334" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/fragment_users.xml" value="0.25416666666666665" />
@@ -34,5 +35,4 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
->>>>>>> 80af5b2383962d1670039d3164846737ce24f483
 </project>

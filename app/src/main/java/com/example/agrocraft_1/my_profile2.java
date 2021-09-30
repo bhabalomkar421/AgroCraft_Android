@@ -2,13 +2,9 @@ package com.example.agrocraft_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,36 +14,33 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
-public class FarmerHomeActivity extends AppCompatActivity {
-
-    private TextView helloUser;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-private Button addProduct,myProfile;
-
-
+public class my_profile2 extends AppCompatActivity {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+TextView farmer_name,farmer_phonenumber,farmer_address,farmer_email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_farmer_home);
-        helloUser=findViewById(R.id.textView2);
-        addProduct=findViewById(R.id.add_product);
-        myProfile=findViewById(R.id.my_profile);
+        setContentView(R.layout.activity_my_profile2);
+        farmer_phonenumber=findViewById(R.id.phone);
+        farmer_name=findViewById(R.id.name);
+        farmer_address=findViewById(R.id.email);
+        farmer_email=findViewById(R.id.address);
+
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         String farmerid=currentFirebaseUser.getUid();
-
         DatabaseReference myRef = database.getReference().child("Farmer").child("Users").child(farmerid);
-
 
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value
-            helloUser.setText("Welcome "+dataSnapshot.child("fullName").getValue());
+                farmer_name.setText("Welcome "+dataSnapshot.child("fullName").getValue());
+                farmer_address.setText("Welcome "+dataSnapshot.child("address").getValue());
+                farmer_email.setText("Welcome "+dataSnapshot.child("email").getValue());
+                farmer_phonenumber.setText("Welcome "+dataSnapshot.child("phone").getValue());
 
-            Log.d("getkey","s"+dataSnapshot.child("fullName").getValue());
+                Log.d("getkey","s"+dataSnapshot.child("fullName").getValue());
 
 
 
@@ -62,28 +55,5 @@ private Button addProduct,myProfile;
 
 
         });
-
-
-        addProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(FarmerHomeActivity.this,FarmerAddProduct.class);
-
-                startActivity(intent);
-
-            }
-    });
-
-
-        myProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FarmerHomeActivity.this, my_profile2.class);
-
-                startActivity(intent);
-                finish();
-
-            }
-        });
-}
+    }
 }

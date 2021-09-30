@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
-    private TextView profileLabel,usersLabel,notificationLabel,tvUsername;
+    private TextView profileLabel,usersLabel,notificationLabel,tvUsername,myprofilelabel;
     private ViewPager mViewPager;
     private PagerViewAdapter pagerViewAdapter;
     private FirebaseAuth mAuth;
@@ -38,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         profileLabel=findViewById(R.id.profileLabel);
         usersLabel=findViewById(R.id.usersLabel);
         notificationLabel=findViewById(R.id.notificationLabel);
+        myprofilelabel=findViewById(R.id.myprofilelabel);
         mViewPager=findViewById(R.id.mainViewPager);
         tvUsername=findViewById(R.id.useraname);
 
@@ -61,6 +62,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mViewPager.setCurrentItem(2);
+
+            }
+        });
+        myprofilelabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewPager.setCurrentItem(3);
 
             }
         });
@@ -96,6 +104,8 @@ public class HomeActivity extends AppCompatActivity {
             usersLabel.setTextSize(16);
             notificationLabel.setTextColor(getResources().getColor(R.color.textTabLight));
             notificationLabel.setTextSize(16);
+            myprofilelabel.setTextColor(getResources().getColor(R.color.textTabLight));
+            myprofilelabel.setTextSize(16);
         }
         if (position==1)
         {
@@ -106,6 +116,8 @@ public class HomeActivity extends AppCompatActivity {
             usersLabel.setTextSize(22);
             notificationLabel.setTextColor(getResources().getColor(R.color.textTabLight));
             notificationLabel.setTextSize(16);
+            myprofilelabel.setTextColor(getResources().getColor(R.color.textTabLight));
+            myprofilelabel.setTextSize(16);
         }
         if (position==2)
         {
@@ -116,6 +128,20 @@ public class HomeActivity extends AppCompatActivity {
             usersLabel.setTextSize(16);
             notificationLabel.setTextColor(getResources().getColor(R.color.textTabBright));
             notificationLabel.setTextSize(22);
+            myprofilelabel.setTextColor(getResources().getColor(R.color.textTabLight));
+            myprofilelabel.setTextSize(16);
+        }
+        if (position==3)
+        {
+
+            profileLabel.setTextColor(getResources().getColor(R.color.textTabLight));
+            profileLabel.setTextSize(16);
+            usersLabel.setTextColor(getResources().getColor(R.color.textTabLight));
+            usersLabel.setTextSize(16);
+            notificationLabel.setTextColor(getResources().getColor(R.color.textTabLight));
+            notificationLabel.setTextSize(16);
+            myprofilelabel.setTextColor(getResources().getColor(R.color.textTabBright));
+            myprofilelabel.setTextSize(22);
         }
     }
 
@@ -138,8 +164,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if (dataSnapshot.exists())
-                {
+//                if (dataSnapshot.exists())
+//                {
                     String name=dataSnapshot.child("name").getValue().toString();
                     tvUsername.setText("You are signed in as:  "+name.toUpperCase()+ "  Sign out ? ");
                     tvUsername.setOnClickListener(new View.OnClickListener() {
@@ -162,10 +188,10 @@ public class HomeActivity extends AppCompatActivity {
                         }
                     });
 
-                }else {
-                    startActivity(new Intent(   HomeActivity.this,UserDetailsActivity.class));
-                    finish();
-                }
+//                }else {
+//                    startActivity(new Intent(   HomeActivity.this,UserDetailsActivity.class));
+//                    finish();
+//                }
             }
 
             @Override
