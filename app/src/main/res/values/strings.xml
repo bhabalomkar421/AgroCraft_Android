@@ -30,6 +30,7 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+<<<<<<< HEAD
 
 
     <string name="product_name">Product name</string>
@@ -49,4 +50,11 @@
 
 
 
+=======
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="my_profile1">My Profile</string>
+    <string name="checkout">Checkout</string>
+>>>>>>> afaaf631900457ce65511b1d00655cb01875bc6f
 </resources>

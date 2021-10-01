@@ -3,6 +3,7 @@ package com.example.agrocraft_1;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -159,19 +160,18 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void verifyUserDetails() {
-        String userId=mAuth.getCurrentUser().getUid();
+        String userId = mAuth.getCurrentUser().getUid();
         myUsersDatabase.child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-//                if (dataSnapshot.exists())
-//                {
-                    String name=dataSnapshot.child("name").getValue().toString();
-                    tvUsername.setText("You are signed in as:  "+name.toUpperCase()+ "  Sign out ? ");
+                if (dataSnapshot.exists()) {
+                    String name = dataSnapshot.child("fullName").getValue().toString();
+                    tvUsername.setText("You are signed in as:  " + name.toUpperCase() + "  Sign out ? ");
                     tvUsername.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            AlertDialog.Builder builder=new AlertDialog.Builder(HomeActivity.this);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
                             builder.setTitle("Confirm Action");
                             builder.setMessage("Do you want to Sign out?");
                             builder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
@@ -182,12 +182,12 @@ public class HomeActivity extends AppCompatActivity {
                                     sendToLogin();
                                 }
                             });
-                            builder.setNegativeButton("Later",null);
+                            builder.setNegativeButton("Later", null);
                             builder.show();
 
                         }
                     });
-
+                }
 //                }else {
 //                    startActivity(new Intent(   HomeActivity.this,UserDetailsActivity.class));
 //                    finish();

@@ -65,12 +65,23 @@ public class UsersFragment extends Fragment {
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
         cartList.setLayoutManager(linearLayoutManager);
+        Button checkout = (Button) v.findViewById(R.id.checkout);
 
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println(this);
+                Intent checkoutIntent = new Intent(getActivity(), CheckoutActivity.class);
+                checkoutIntent.putExtra("userId", userId);
+                startActivity(checkoutIntent);
+            }
+        });
         return v;
     }
 
     @Override
     public void onStart() {
+
         super.onStart();   FirebaseRecyclerOptions<Cart> options=new FirebaseRecyclerOptions.Builder<Cart>()
                 .setQuery(myCartDatabase,Cart.class)
                 .build();
@@ -91,13 +102,13 @@ public class UsersFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        String name=dataSnapshot.child("name").getValue().toString();
-                        final String phone=dataSnapshot.child("phone").getValue().toString();
-                        String county=dataSnapshot.child("county").getValue().toString();
-                        String subCounty=dataSnapshot.child("subcounty").getValue().toString();
+                        String name=dataSnapshot.child("fullName").getValue().toString();
+//                        final String phone=dataSnapshot.child("phone").getValue().toString();
+//                        String county=dataSnapshot.child("county").getValue().toString();
+//                        String subCounty=dataSnapshot.child("subcounty").getValue().toString();
 
-                        holder.tvCounty.setText(county);
-                        holder.tvSuCounty.setText(subCounty);
+//                        holder.tvCounty.setText(county);
+//                        holder.tvSuCounty.setText(subCounty);
                         holder.tvProductUploader.setText("Sold by: "+name);
 
                         holder.btnCall.setOnClickListener(new View.OnClickListener() {
@@ -107,13 +118,14 @@ public class UsersFragment extends Fragment {
 
                                 if (isCallAllowed()) {
 
-                                    dial(phone);
+                                    dial("123456789");
                                 }else {
                                     requestCallPermission();
                                 }
 
                             }
                         });
+
 
                     }
 
@@ -155,7 +167,7 @@ public class UsersFragment extends Fragment {
 
     public static class CartViewHolder extends RecyclerView.ViewHolder{
         private ImageView cart_product_imageView;
-        private TextView cart_tvName,cart_tvPrice,cart_tvQty,tvCounty,tvSuCounty,tvProductUploader;
+        private TextView cart_tvName,cart_tvPrice,cart_tvQty,tvProductUploader;
         private Button btnCall;
 
         public CartViewHolder(@NonNull View itemView) {
@@ -165,15 +177,15 @@ public class UsersFragment extends Fragment {
             cart_tvName=itemView.findViewById(R.id.cart_name_tv);
             cart_tvPrice=itemView.findViewById(R.id.cart_price_tv);
             cart_tvQty=itemView.findViewById(R.id.cart_qty_tv);
-            tvCounty=itemView.findViewById(R.id.cart_county);
-            tvSuCounty=itemView.findViewById(R.id.cart_sub_county);
             btnCall=itemView.findViewById(R.id.btnCall);
             tvProductUploader=itemView.findViewById(R.id.product_cart_uploader);
 
-
-
         }
+
     }
+
+
+
     private void requestCallPermission(){
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),Manifest.permission.CALL_PHONE)){
