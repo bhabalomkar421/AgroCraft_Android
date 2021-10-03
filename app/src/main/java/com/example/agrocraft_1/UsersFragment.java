@@ -72,7 +72,6 @@ public class UsersFragment extends Fragment {
             public void onClick(View view) {
                 System.out.println(this);
                 Intent checkoutIntent = new Intent(getActivity(), CheckoutActivity.class);
-                checkoutIntent.putExtra("userId", userId);
                 startActivity(checkoutIntent);
             }
         });
