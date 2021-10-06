@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -30,16 +29,13 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class DetailActivity extends AppCompatActivity {
-
     private String name,qty,price,image,poster,time,postId,category;
-    private TextView tvDetailTitle,tvDetailViews,tvDetailLikes,tvDetailQty,tvDetailCategory,tvDetailPoster,tvDetailPrice,tvDetailTime,tvPosterPhone;
+    private TextView tvDetailTitle,tvDetailQty,tvDetailCategory,tvDetailPoster,tvDetailPrice,tvDetailTime,tvPosterPhone;
     private ImageView ivImage;
     private DatabaseReference myUsersDatabase;
     private FirebaseAuth mAuth;
     private String userId;
     private DatabaseReference myProductsDatabase,myCartDatabase;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +49,7 @@ public class DetailActivity extends AppCompatActivity {
         tvDetailPoster=findViewById(R.id.tvDetailPoster);
         tvDetailPrice=findViewById(R.id.tvDetailPrice);
         tvDetailTime=findViewById(R.id.tvDetailTime);
-
         tvPosterPhone=findViewById(R.id.tvDetailPosterPhone);
-
-        tvDetailViews=findViewById(R.id.tvDetailViews);
-        tvDetailLikes=findViewById(R.id.tvDetailLikes);
 
         mAuth=FirebaseAuth.getInstance();
         myCartDatabase= FirebaseDatabase.getInstance().getReference().child("Cart");
@@ -96,37 +88,7 @@ public class DetailActivity extends AppCompatActivity {
                 sendProductToCart(view,name,qty,price,poster,postId);
             }
         });
-
-             setupUploader();
-             setUpViewsandLikes();
-
-             tvDetailLikes.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
-                     myProductsDatabase.child(postId).child("product_likes").child(userId).setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-                         @Override
-                         public void onComplete(@NonNull Task<Void> task) {
-                             if (task.isSuccessful())
-                             {
-                                 Toast.makeText(DetailActivity.this, "You Liked this product...", Toast.LENGTH_SHORT).show();
-                             }
-                         }
-                     });
-
-                 }
-             });
-
-
-
-
-
-
-
-
-
-
-
-
+        setupUploader();
 
     }
 
@@ -159,42 +121,6 @@ public class DetailActivity extends AppCompatActivity {
 
     }
 
-    private void setUpViewsandLikes() {
-
-        myProductsDatabase.child(postId).child("product_views").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                if (dataSnapshot.exists())
-                {
-                    long views=dataSnapshot.getChildrenCount();
-                    tvDetailViews.setText(""+views);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        myProductsDatabase.child(postId).child("product_likes").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                if (dataSnapshot.exists())
-                {
-                    long likes=dataSnapshot.getChildrenCount();
-                    tvDetailLikes.setText(""+likes);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
     private void setupUploader() {
         myUsersDatabase.child(poster).addValueEventListener(new ValueEventListener() {
             @Override
@@ -223,14 +149,5 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        myProductsDatabase.child(postId).child("product_views").child(userId).setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful())
-                {
-                   // Toast.makeText(DetailActivity.this, "You Liked this product...", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 }

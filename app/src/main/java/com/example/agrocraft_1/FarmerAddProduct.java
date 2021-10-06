@@ -148,20 +148,27 @@ public class FarmerAddProduct extends AppCompatActivity {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
             String farmerid=currentFirebaseUser.getUid();
-            String productid=database.getReference().child("Products").push().getKey();
-            Log.d("product",""+productid);
-            DatabaseReference myRef = database.getReference().child("Products").child(productid);
+            String post_id=database.getReference().child("Products").push().getKey();
+            Log.d("product",""+post_id);
+            DatabaseReference myRef = database.getReference().child("Products").child(post_id);
 
 
 
-if(product!=null && category!=null && price!=null && quantity!=null){
+        if(product!=null && category!=null && price!=null && quantity!=null){
+
+            DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss ");
+            Date date=new Date();
+            String time=dateFormat.format(date);
             HashMap<String,Object> myMap=new HashMap<>();
-            myMap.put("name",product);
-            myMap.put("category",category);
-            myMap.put("price",price);
-            myMap.put("quantity",quantity);
-            myMap.put("FarmerId",farmerid);
-            myMap.put("Url",downloadUrl.toString());
+            myMap.put("post_id",post_id);
+            myMap.put("product_name",product);
+            myMap.put("product_category",category);
+            myMap.put("product_price",price);
+            myMap.put("product_quantity",quantity);
+            myMap.put("product_poster",farmerid);
+            myMap.put("post_time",time);
+            myMap.put("post_image",downloadUrl.toString());
+
 
             myRef.updateChildren(myMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -178,7 +185,7 @@ if(product!=null && category!=null && price!=null && quantity!=null){
     String myRef2 = database.getReference().child("Farmer").child("Users").child(farmerid).child("products").push().getKey();
     DatabaseReference myReference = database.getReference().child("Farmer").child("Users").child(farmerid).child("products").child(myRef2);
     HashMap<String,Object> myMap2=new HashMap<>();
-    myMap2.put("Product_id",productid);
+    myMap2.put("Product_id",post_id);
 //    List<String>products_lists=new ArrayList<>();
 //    products_lists.add(productid);
     myReference.updateChildren(myMap2).addOnCompleteListener(new OnCompleteListener<Void>() {
