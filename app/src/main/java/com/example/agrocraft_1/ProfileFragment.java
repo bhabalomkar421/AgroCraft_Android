@@ -135,15 +135,12 @@ pd.setMessage("Please wait...");
 
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(category) && !TextUtils.isEmpty(quantity) &&!TextUtils.isEmpty(price))
                 {
-
                     if (imageUri!=null)
                     {
-
                         //toast("Data is ready");
                         Log.d(TAG, name + " " + category + " " + quantity + " ");
                         pd.show();
                         postData(name,category,quantity,price,imageUri);
-
                     }else {
                         toast("Tap the avatar to select product Image...");
                     }
@@ -211,9 +208,6 @@ pd.setMessage("Please wait...");
                                    }
                                }
                            });
-
-
-
                        }
                    });
                }else {
