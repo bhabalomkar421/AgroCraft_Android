@@ -28,12 +28,13 @@
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/post_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/single_cart.xml" value="0.25416666666666665" />
         <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/single_product.xml" value="0.25416666666666665" />
-<<<<<<< HEAD
         <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/activity_farmer_add_product.xml" value="0.2" />
+        <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/activity_farmer_home.xml" value="0.18070652173913043" />
+        <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/activity_farmer_my_product.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/activity_register.xml" value="0.24270833333333333" />
-=======
-        <entry key="..\:/Projects/Android_temp/AgroCraft_Android/app/src/main/res/layout/text_row_item.xml" value="0.25416666666666665" />
->>>>>>> e1efaa3ed2c4e0370858602e4a2aeaad11d5ddd3
+        <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/content_detail.xml" value="0.245018115942029" />
+        <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/farmer_products.xml" value="0.264" />
+        <entry key="..\:/Users/Ansh/Documents/ANDROID MINI PROECT/Agrocraft new version/AgroCraft_Android/app/src/main/res/layout/single_product.xml" value="0.245018115942029" />
       </map>
     </option>
   </component>

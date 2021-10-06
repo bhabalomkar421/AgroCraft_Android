@@ -24,7 +24,7 @@ public class FarmerHomeActivity extends AppCompatActivity {
 
     private TextView helloUser;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-private Button addProduct,myProfile;
+private Button addProduct,myProfile,myproduct;
 
 
     @Override
@@ -34,6 +34,7 @@ private Button addProduct,myProfile;
         helloUser=findViewById(R.id.textView2);
         addProduct=findViewById(R.id.add_product);
         myProfile=findViewById(R.id.my_profile);
+        myproduct=findViewById(R.id.my_product);
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         String farmerid=currentFirebaseUser.getUid();
 
@@ -73,7 +74,15 @@ private Button addProduct,myProfile;
 
             }
     });
+        myproduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(FarmerHomeActivity.this,FarmerMyProduct.class);
 
+                startActivity(intent);
+
+            }
+        });
 
         myProfile.setOnClickListener(new View.OnClickListener() {
             @Override

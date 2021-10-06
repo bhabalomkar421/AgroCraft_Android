@@ -14,12 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroCraft_1">
         <activity
+            android:name=".FarmerMyProduct"
+            android:exported="true" />
+        <activity
             android:name=".my_profile2"
             android:exported="true" />
         <activity
             android:name=".FarmerAddProduct"
-            android:exported="true" />
-<!--                    android:name=".CheckoutActivity"-->
+            android:exported="true" /> <!-- android:name=".CheckoutActivity" -->
         <activity
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail"
