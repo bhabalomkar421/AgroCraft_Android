@@ -96,7 +96,7 @@ public class UsersFragment extends Fragment {
                 Picasso.get().load(model.getPost_image()).placeholder(R.drawable.ic_photo_library_black_24dp).into(holder.cart_product_imageView);
 
 
-                myUsersDatabase= FirebaseDatabase.getInstance().getReference().child("Buyer").child("Users");
+                myUsersDatabase= FirebaseDatabase.getInstance().getReference().child("Farmer").child("Users");
                 myUsersDatabase.child(model.getPoster_id()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

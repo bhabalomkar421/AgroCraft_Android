@@ -35,7 +35,7 @@ public class DetailActivity extends AppCompatActivity {
     private DatabaseReference myUsersDatabase;
     private FirebaseAuth mAuth;
     private String userId;
-    private DatabaseReference myProductsDatabase,myCartDatabase;
+    private DatabaseReference myProductsDatabase,myCartDatabase,myFarmerDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class DetailActivity extends AppCompatActivity {
         myCartDatabase= FirebaseDatabase.getInstance().getReference().child("Cart");
 
         myUsersDatabase= FirebaseDatabase.getInstance().getReference().child("Buyer").child("Users");
+        myFarmerDatabase= FirebaseDatabase.getInstance().getReference().child("Farmer").child("Users");
         myProductsDatabase= FirebaseDatabase.getInstance().getReference().child("Products");
 
 
@@ -122,7 +123,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setupUploader() {
-        myUsersDatabase.child(poster).addValueEventListener(new ValueEventListener() {
+        myFarmerDatabase.child(poster).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists())
@@ -132,7 +133,7 @@ public class DetailActivity extends AppCompatActivity {
                     String phone=dataSnapshot.child("phone").getValue().toString();
 
                     tvDetailPoster.setText("Product Sold  By: "+name);
-                    tvPosterPhone.setText(phone);
+                    tvPosterPhone.setText("Seller phone no. : " + phone);
 
 
                 }
