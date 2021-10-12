@@ -1,5 +1,7 @@
 package com.example.agrocraft_1;
 
+import android.util.Log;
+
 public class FarmerProducts {
 
     String productname, productprice, productquantity, productimage;
@@ -10,5 +12,7 @@ public class FarmerProducts {
         this.productprice = productprice;
         this.productquantity = productquantity;
         this.productimage = productimage;
+
+        Log.d("construct",""+productimage);
     }
 }

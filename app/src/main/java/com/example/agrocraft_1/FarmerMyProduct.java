@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,10 +59,18 @@ ArrayList<FarmerProducts> data = new ArrayList<>();
                     myRef2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            Log.d("snapshots",""+snapshot.child("name").getValue()+" "+snapshot.child("price").getValue());
+                            Log.d("snapshots",""+snapshot.child("product_name").getValue()+" "+snapshot.child("product_price").getValue());
 //                            Log.d("hi","hi");
+//data.add(new FarmerProducts("onion","12","12","www.com"));
+                            data.add(new FarmerProducts(""+snapshot.child("product_name").getValue(),""+snapshot.child("product_price").getValue(),""+snapshot.child("product_quantity").getValue(),""+snapshot.child("post_image").getValue()));
 
-                            data.add(new FarmerProducts(""+snapshot.child("name").getValue(),""+snapshot.child("price").getValue(),""+snapshot.child("quantity").getValue(),""+snapshot.child("Url").getValue()));
+
+                            Log.d("tag",""+data);
+
+
+
+
+
                         }
 
                         @Override
@@ -76,17 +85,13 @@ ArrayList<FarmerProducts> data = new ArrayList<>();
 
 
 
-                    AdapterClass adapter= new AdapterClass(data);
-
-                    mRecyclerView.setAdapter(adapter);
-                    mRecyclerView.setLayoutManager(new LinearLayoutManager( FarmerMyProduct.this, RecyclerView.HORIZONTAL,  false));
-
 //                    adapterclass = new AdapterClass(FarmerMyProduct.this, data);
 //                    mRecyclerView.setAdapter(adapterclass);
 
 
 
                 }
+
             }
 
             @Override
@@ -95,4 +100,15 @@ ArrayList<FarmerProducts> data = new ArrayList<>();
 
             }
         });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("tagline","tag"+data);
+                AdapterClass adapter= new AdapterClass(data);
+
+                mRecyclerView.setAdapter(adapter);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager( FarmerMyProduct.this, RecyclerView.VERTICAL,  false));
+            }
+        }, 3000);
+
 }}

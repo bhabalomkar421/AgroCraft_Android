@@ -35,10 +35,10 @@ TextView farmer_name,farmer_phonenumber,farmer_address,farmer_email;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value
-                farmer_name.setText("Welcome "+dataSnapshot.child("fullName").getValue());
-                farmer_address.setText("Welcome "+dataSnapshot.child("address").getValue());
-                farmer_email.setText("Welcome "+dataSnapshot.child("email").getValue());
-                farmer_phonenumber.setText("Welcome "+dataSnapshot.child("phone").getValue());
+                farmer_name.setText("NAME "+dataSnapshot.child("fullName").getValue());
+                farmer_address.setText("ADDRESS "+dataSnapshot.child("address").getValue());
+                farmer_email.setText("EMAIL "+dataSnapshot.child("email").getValue());
+                farmer_phonenumber.setText("PHONE "+dataSnapshot.child("phone").getValue());
 
                 Log.d("getkey","s"+dataSnapshot.child("fullName").getValue());
 
