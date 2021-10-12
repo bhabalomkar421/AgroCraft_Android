@@ -44,6 +44,8 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.ViewHolder> 
         holder.productname.setText(data.get(position).productname);
         holder.productprice.setText("Rs "+data.get(position).productprice);
         holder.productquantity.setText("Quant " +data.get(position).productquantity);
+//        Picasso.get().load(data.get(position).getAndroid_image_url()).resize(120, 60).into(holder.ivPicture);
+        Picasso.get().load(data.get(position).productimage).resize(100, 100).into(holder.ivPicture);
 
 //        holder.ivPicture.setImageBitmap(getBitmapFromURL());
 //        URL newurl = null;
